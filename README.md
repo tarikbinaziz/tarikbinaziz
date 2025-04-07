@@ -55,7 +55,7 @@ Here are some types of apps I've worked on:
 ### 📫 Let's Connect
 
 - 📧 **Email**: mdtarikbinaziz@gmail.com  
-- 🌐 **Portfolio**: tarikdev.web.app  
+- 🌐 **Portfolio**: [https://tarikdev.web.app/]  
 - 💼 **LinkedIn**: [linkedin.com/in/tarikbinaziz](https://linkedin.com/in/tarikbinaziz)  
 
 ---
