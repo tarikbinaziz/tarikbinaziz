@@ -3,6 +3,12 @@
 
 ---
 
+### ✍️ Random Dev Quote
+
+![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
+
+---
+
 ### 👨‍💻 About Me
 
 💡 Passionate Flutter developer with over **3 years of hands-on experience** crafting high-performance, beautiful, and scalable mobile apps.
@@ -55,13 +61,7 @@ Here are some types of apps I've worked on:
 🏆 GitHub Trophies
 <p align="center"> <img src="https://github-profile-trophy.vercel.app/?username=tarikbinaziz&theme=onedark&row=1&column=7" alt="GitHub Trophies" /> </p>
 
----
 
-### ✍️ Random Dev Quote
-
-![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
-
----
 
 ### 📫 Let's Connect
 
