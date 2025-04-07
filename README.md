@@ -52,6 +52,11 @@ Here are some types of apps I've worked on:
 
 ---
 
+🏆 GitHub Trophies
+<p align="center"> <img src="https://github-profile-trophy.vercel.app/?username=tarikbinaziz&theme=onedark&row=1&column=7" alt="GitHub Trophies" /> </p>
+
+---
+
 ### 📫 Let's Connect
 
 - 📧 **Email**: mdtarikbinaziz@gmail.com  
