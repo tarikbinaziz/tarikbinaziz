@@ -57,6 +57,12 @@ Here are some types of apps I've worked on:
 
 ---
 
+### ✍️ Random Dev Quote
+
+![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
+
+---
+
 ### 📫 Let's Connect
 
 - 📧 **Email**: mdtarikbinaziz@gmail.com  
