@@ -66,3 +66,8 @@ Here are some types of apps I've worked on:
 
 > _“Code is like humor. When you have to explain it, it’s bad.”_ 😄
 
+### 🐍 Watch the Snake eat my contributions!
+
+![snake gif](https://tarikbinaziz.github.io/tarikbinaziz/github-snake.svg)
+
+
