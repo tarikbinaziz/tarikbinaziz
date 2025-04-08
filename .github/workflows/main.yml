@@ -18,6 +18,11 @@ jobs:
           github_user_name: tarikbinaziz
           svg_out_path: dist/github-contribution-grid-snake.svg
 
+      # Ensure dist directory exists
+      - name: Ensure dist directory exists
+        run: |
+          mkdir -p dist
+
       # Push to GitHub Pages
       - uses: crazy-max/ghaction-github-pages@v3
         with:
