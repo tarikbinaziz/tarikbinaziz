@@ -11,6 +11,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Ensure dist directory exists
+      - name: Ensure dist directory exists
+        run: |
+          mkdir -p dist
+
       # Snake Animation
       - uses: Platane/snk@v3
         id: snake-gif
@@ -18,10 +23,9 @@ jobs:
           github_user_name: tarikbinaziz
           svg_out_path: dist/github-contribution-grid-snake.svg
 
-      # Ensure dist directory exists
-      - name: Ensure dist directory exists
-        run: |
-          mkdir -p dist
+      # List files in dist directory to verify
+      - name: List files in dist directory
+        run: ls -l dist
 
       # Push to GitHub Pages
       - uses: crazy-max/ghaction-github-pages@v3
