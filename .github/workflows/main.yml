@@ -2,7 +2,7 @@ name: Generate Snake Game
 
 on:
   schedule:
-    - cron: "0 0 * * *"  # Runs every day at midnight UTC
+    - cron: "0 0 * * *"  # Every day at midnight
   workflow_dispatch:
 
 jobs:
@@ -10,16 +10,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Generate Snake Game SVG
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Generate Snake SVG
         uses: Platane/snk@v3
         with:
           github_user_name: tarikbinaziz
           outputs: |
             dist/github-contribution-grid-snake.svg
 
-      - name: Push to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          publish_branch: output
+      - name: Commit and push to main branch
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          cp -r dist/* .
+          git add github-contribution-grid-snake.svg
+          git commit -m "Update GitHub contribution snake 🐍" || echo "No changes to commit"
+          git push
