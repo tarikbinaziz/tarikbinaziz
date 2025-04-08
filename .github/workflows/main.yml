@@ -15,8 +15,9 @@ jobs:
 
       - name: Build the project
         run: |
-          # Your build commands here
-          # For example: npm run build
+          # Example build commands to create the dist directory
+          mkdir -p dist
+          echo "Build content" > dist/index.html
 
       - name: Push dist directory to output branch
         env:
