@@ -1,40 +1,27 @@
-name: Generate Snake Game
+name: Generate Datas
 
 on:
-  push:
-    branches:
-      - main
+  schedule: # execute every 12 hours
+    - cron: "0 */12 * * *"
+  workflow_dispatch:
 
 jobs:
   build:
+    name: Jobs to update datas
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      # Snake Animation
+      - uses: Platane/snk@v3
+        id: snake-gif
+        with:
+          github_user_name: tarikbinaziz
+          svg_out_path: dist/github-contribution-grid-snake.svg
 
-      - name: Build the project
-        run: |
-          # Example build commands to create the dist directory
-          mkdir -p dist
-          echo "Build content" > dist/index.html
-
-      - name: Push dist directory to output branch
+      # Push to GitHub Pages
+      - uses: crazy-max/ghaction-github-pages@v3
+        with:
+          target_branch: output
+          build_dir: dist
         env:
-          ACTIONS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          # Configure git
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
-          # Clone the output branch
-          git clone --branch output https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/tarikbinaziz/tarikbinaziz.git output
-
-          # Sync dist to output directory
-          rsync -a --delete dist/ output/
-
-          # Commit and push changes
-          cd output
-          git add .
-          git commit -m "Update output"
-          git push --force https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/tarikbinaziz/tarikbinaziz.git output
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
