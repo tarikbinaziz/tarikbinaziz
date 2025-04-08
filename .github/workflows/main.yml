@@ -1,0 +1,39 @@
+name: Generate Snake Game
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Build the project
+        run: |
+          # Your build commands here
+          # For example: npm run build
+
+      - name: Push dist directory to output branch
+        env:
+          ACTIONS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Configure git
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Clone the output branch
+          git clone --branch output https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/tarikbinaziz/tarikbinaziz.git output
+
+          # Sync dist to output directory
+          rsync -a --delete dist/ output/
+
+          # Commit and push changes
+          cd output
+          git add .
+          git commit -m "Update output"
+          git push --force https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/tarikbinaziz/tarikbinaziz.git output
